@@ -9,3 +9,29 @@ type id=number;
 type Role= 'admin' | 'user';
 //! interface Role= 'admin' | 'user';
 
+interface User{
+    name:string;
+    id:id;
+    role: Role;
+}
+const user:User={
+    name:"lipu",
+    id:1,
+    role:'admin'
+}
+
+
+//Interface
+
+interface Animal{
+    species:string;
+}
+
+interface Cat extends Animal{
+    breed:string;
+}
+
+const cat:Cat={
+    breed:"persian",
+    species:'cat fat'
+}
