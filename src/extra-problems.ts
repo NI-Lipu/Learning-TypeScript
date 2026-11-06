@@ -100,3 +100,28 @@ const getUniqueValues = (array1: (string | number)[], array2: (string | number)[
 
 const array1 = ['sabbir', 'rabbir', 'sohel', 'lipu'];
 const array2 = ['sabbir', 'rabbir', 'sohel', 'rohim'];
+
+
+
+const calculateTotalPrice = (products: Product[]): number => {
+    const result = products.map(product => product.discount ? (product.price * product.quantity) - (((product.price * product.quantity) * (product.discount)) / 100) : (product.price * product.quantity));
+    console.log(result);
+
+    return result.reduce((sum, price) => { return sum + price }, 0);
+}
+
+
+interface Product {
+    name: string;
+    price: number;
+    quantity: number;
+    discount?: number;
+}
+
+const products: Product[] = [
+    { name: 'Pen', price: 10, quantity: 2 },
+    { name: 'Notebook', price: 25, quantity: 3, discount: 10 },
+    { name: 'Bag', price: 50, quantity: 1, discount: 20 },
+];
+
+
