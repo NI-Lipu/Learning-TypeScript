@@ -30,3 +30,24 @@ class Person {
     }
 }
 
+
+const filterByRating = (books: Book[]): Book[] => {
+    const filteredBook: Book[] = [];
+    for (let i = 0; i < books.length; i++) {
+        if (books[i].rating >= 4) {
+            filteredBook.push(books[i]);
+        }
+    }
+    return filteredBook;
+}
+
+interface Book {
+    title: string;
+    rating: number;
+}
+const books: Book[] = [
+    { title: 'Book A', rating: 4.5 },
+    { title: 'Book B', rating: 3.2 },
+    { title: 'Book C', rating: 5.0 },
+];
+
