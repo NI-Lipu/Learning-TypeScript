@@ -18,3 +18,15 @@ const getLength = (value: string | any[]): number => {
     }
     return 0;
 };
+
+
+class Person {
+    constructor(public name: string, public age: number) {
+
+    }
+
+    getDetails(): string {
+        return `Name: ${this.name}, Age: ${this.age}`
+    }
+}
+
