@@ -52,19 +52,51 @@ const books: Book[] = [
 ];
 
 
-const filterActiveUsers=(users:Users[]):Users[]=>{
-    return users.filter((user)=>user.isActive===true)
+const filterActiveUsers = (users: Users[]): Users[] => {
+    return users.filter((user) => user.isActive === true)
 }
 
-interface Users{
-    id:number;
-    name:string;
-    email:string;
-    isActive:boolean;
+interface Users {
+    id: number;
+    name: string;
+    email: string;
+    isActive: boolean;
 }
-const users:Users[] = [
-  { id: 1, name: 'Rakib', email: 'rakib@example.com', isActive: true },
-  { id: 2, name: 'Asha', email: 'asha@example.com', isActive: false },
-  { id: 3, name: 'Rumi', email: 'rumi@example.com', isActive: true },
+const users: Users[] = [
+    { id: 1, name: 'Rakib', email: 'rakib@example.com', isActive: true },
+    { id: 2, name: 'Asha', email: 'asha@example.com', isActive: false },
+    { id: 3, name: 'Rumi', email: 'rumi@example.com', isActive: true },
 ];
- 
+
+
+
+const getUniqueValues = (array1: (string | number)[], array2: (string | number)[]): (string | number)[] => {
+    const result: (string | number)[] = [];
+
+    for (let i = 0; i < array1.length; i++) {
+        let isDuplicate = false;
+
+        for (let j = 0; j < result.length; j++) {
+            if (array1[i] === result[j]) {
+                isDuplicate = true;
+                break;
+            }
+        }
+        if (!isDuplicate) result.push(array1[i])
+    }
+    for (let i = 0; i < array2.length; i++) {
+        let isDuplicate = false;
+
+        for (let j = 0; j < result.length; j++) {
+            if (array2[i] === result[j]) {
+                isDuplicate = true;
+                break;
+            }
+        }
+        if (!isDuplicate) result.push(array2[i])
+    }
+    return result;
+}
+
+const array1 = ['sabbir', 'rabbir', 'sohel', 'lipu'];
+const array2 = ['sabbir', 'rabbir', 'sohel', 'rohim'];
