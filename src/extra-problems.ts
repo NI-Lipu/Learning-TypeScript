@@ -51,3 +51,20 @@ const books: Book[] = [
     { title: 'Book C', rating: 5.0 },
 ];
 
+
+const filterActiveUsers=(users:Users[]):Users[]=>{
+    return users.filter((user)=>user.isActive===true)
+}
+
+interface Users{
+    id:number;
+    name:string;
+    email:string;
+    isActive:boolean;
+}
+const users:Users[] = [
+  { id: 1, name: 'Rakib', email: 'rakib@example.com', isActive: true },
+  { id: 2, name: 'Asha', email: 'asha@example.com', isActive: false },
+  { id: 3, name: 'Rumi', email: 'rumi@example.com', isActive: true },
+];
+ 
